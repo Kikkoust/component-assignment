@@ -12,6 +12,7 @@ function App() {
     <div>
       <Header/>
       <SelectProduct/>
+      <OrderInfo/>
     </div>
   )
 }
@@ -42,6 +43,38 @@ function SelectProduct(){
     </div>
     
   </>
+  )
+}
+
+function OrderInfo(){
+  return(
+    <div className="info">
+      <h1>Order Info</h1>
+      <table>
+          <tr>
+            <th id="colhead1">Product</th>
+            <th id="colhead">Quanitity</th>
+            <th id="colhead">Total</th>
+          </tr>
+          <tr>
+            <td>testi</td>
+            <td>testi</td>
+            <td>testi</td>
+          </tr>
+          <tr>
+            <td>testi</td>
+            <td>testi</td>
+            <td>testi</td>
+          </tr>
+          <tr>
+            <td>testi</td>
+            <td>testi</td>
+            <td>testi</td>
+          </tr>
+
+
+      </table>
+    </div>
   )
 }
 
