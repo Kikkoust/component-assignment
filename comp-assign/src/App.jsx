@@ -26,6 +26,16 @@ function Header(){
 }
 
 function SelectProduct(){
+  
+  const [selectedProd, setSelectedProd] = useState('Fender Stratocaster');
+  const [quantity, setQuantity] = useState(1);
+
+  const productPrice = {
+    'Fender Stratocaster': 790,
+    'Fender Telecaster': 750,
+    'Fender Jazzmaster': 800,
+    'Fender Mustang': 650
+  };
 
   return(
     <><div className="product">
