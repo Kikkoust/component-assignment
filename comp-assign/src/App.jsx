@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import logo from './assets/disc-32390_640.png'
 import viteLogo from '/vite.svg'
 
 
 
 
 function App() {
-  const [orders, setOrders] = useState([]); // Siirretty orders-tila App-komponenttiin
+  const [orders, setOrders] = useState([]); 
 
   const addOrder = (product, quantity, total) => {
     const newOrder = { product, quantity, total };
@@ -25,7 +25,9 @@ function App() {
 function Header() {
   return (
     <div className="header">
+      <img src={logo} alt="logo" />
       <h1>Welcome to product page!</h1>
+
     </div>
   );
 }
@@ -50,7 +52,7 @@ function SelectProduct({ addOrder }) {
       const total = quantity * productPrice[selectedProd];
       addOrder(selectedProd, quantity, total);
     } else {
-      alert('Please select a quantity greater than 0.');
+      alert('Select quantity more than 0');
     }
   };
 
@@ -96,7 +98,7 @@ function OrderInfo({ orders }) {
         <tbody>
           {orders.length === 0 ? (
             <tr>
-              <td colSpan="3">No orders added yet.</td>
+              <td colSpan="3">No added products</td>
             </tr>
           ) : (
             orders.map((order, index) => (
