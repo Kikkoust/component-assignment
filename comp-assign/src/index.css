@@ -14,14 +14,73 @@ body{
   max-width: 60px;
 }
 
+.quantity p{
+  display:flex;
+  justify-content: center;
+  font-size: large;
+}
 
+#buttons{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: large;
+  gap: 10px;
+}
+
+#buttons button:hover{
+  cursor: pointer;
+}
+
+.orderinfo{
+  border: 3px solid #9A7E6F;
+}
+
+
+#order{
+  font-weight: bold;
+}
+
+#order:hover {
+  background-color: #CBD2A4;
+  cursor: pointer;
+}
+
+.orderbutton{
+  display: flex;
+  justify-content: center;
+  background-color: #9A7E6F;
+  height: 50px;
+}
+
+
+.orderinfo tr{
+  border: 2px solid #9A7E6F;
+
+}
 
 .orderinfo h2{
   display: flex;
-  background-color: #9A7E6F;
   justify-content: center; 
+}
+
+.orderinfo th{
+
+  width: 100%;
+  align-items: center;
+  display: row;
+  background-color: #9A7E6F;
 
 }
+
+.orderinfo td{
+
+  text-align: center;
+  display: row;
+
+
+}
+
 .product h2{
   display: flex;
   color: black;
@@ -35,6 +94,11 @@ body{
   text-align: center;
   font-weight: bold;
   height: 30px;
+}
+
+.product select:hover {
+  background-color:#CBD2A4;
+  cursor:grab;
 }
 
   

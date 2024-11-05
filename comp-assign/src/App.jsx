@@ -69,14 +69,19 @@ function SelectProduct({ addOrder }) {
         </select>
       </div>
 
-      <div>
+      <div className="quantity">
         <p>Quantity:</p>
+        <div id="buttons">
         <button onClick={() => handleQuantityChange(-1)}>-</button>
         <span>{quantity}</span>
         <button onClick={() => handleQuantityChange(1)}>+</button>
+        </div>
       </div>
-
-      <button onClick={handleAddOrder}>Add Order</button>
+        
+      <div className="orderbutton">
+      
+        <button id="order" onClick={handleAddOrder}>ADD ORDER</button>
+      </div>
     </>
   );
 }
