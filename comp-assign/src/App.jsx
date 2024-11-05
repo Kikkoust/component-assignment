@@ -1,8 +1,5 @@
 import { useState } from 'react'
 import logo from './assets/disc-32390_640.png'
-import viteLogo from '/vite.svg'
-
-
 
 
 function App() {
@@ -27,6 +24,7 @@ function Header() {
     <div className="header">
       <img src={logo} alt="logo" />
       <h1>Welcome to product page!</h1>
+      <img src={logo} alt="logo" />
 
     </div>
   );
@@ -58,9 +56,9 @@ function SelectProduct({ addOrder }) {
 
   return (
     <>
-      <div>
+      <div className="product">
         <h2>Select product</h2>
-        <select 
+        <select
           value={selectedProd} 
           onChange={(e) => setSelectedProd(e.target.value)}>
           {Object.keys(productPrice).map((product) => (
@@ -85,8 +83,8 @@ function SelectProduct({ addOrder }) {
 
 function OrderInfo({ orders }) {
   return (
-    <div>
-      <h1>Order Info</h1>
+    <div className="orderinfo">
+      <h2>Order Info</h2>
       <table>
         <thead>
           <tr>

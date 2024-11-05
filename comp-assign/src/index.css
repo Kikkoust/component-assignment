@@ -1,15 +1,41 @@
 body{
-  background-color: beige;
+  background-color: #CBD2A4;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .header{
+  display: flex;
   color: black;
+  align-items: center;
+  justify-content: center; 
 }
 
-.product{
-  color: black;
+.header img{
+  max-width: 60px;
 }
 
+
+
+.orderinfo h2{
+  display: flex;
+  background-color: #9A7E6F;
+  justify-content: center; 
+
+}
+.product h2{
+  display: flex;
+  color: black;
+  background-color: #9A7E6F;
+  justify-content: center;
+}
+
+.product select{
+  display: flex;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  height: 30px;
+}
 
   
 
