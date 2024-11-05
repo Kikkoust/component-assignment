@@ -38,6 +38,10 @@ function SelectProduct(){
   };
 
 
+  const handleQuantityChange = (increment) => {
+    setQuantity((prev) => Math.max(0, prev + increment)); //Ei voi laittaa määrää negatiiviseksi.
+  };
+
   return (
     <>
       <div className="product">
@@ -59,10 +63,16 @@ function SelectProduct(){
     </div>
 
     <div id="quantity">
-      <p>Quauntity:</p>
-    
+    <p>Quantity:</p>
+        <button onClick={() => handleQuantityChange(-1)}>-</button>
+        <span>{quantity}</span>
+        <button onClick={() => handleQuantityChange(1)}>+</button>
     </div>
     
+    <div className="addorder">
+          <button>Add Order</button>
+    </div>
+
   </>
   )
 }
