@@ -37,13 +37,24 @@ function SelectProduct(){
     'Fender Mustang': 650
   };
 
-  return(
-    <><div className="product">
-      <h2>Select product</h2>
-    </div>
+
+  return (
+    <>
+      <div className="product">
+        <h2>Select product</h2>
+      </div>
     
     <div id="name">
       <p>Product:</p>
+      <select 
+          value={selectedProd} 
+          onChange={(e) => setSelectedProd(e.target.value)}>
+          {Object.keys(productPrice).map((product) => (
+            <option key={product} value={product}>
+              {product}
+            </option>
+          ))}
+        </select>
 
     </div>
 
