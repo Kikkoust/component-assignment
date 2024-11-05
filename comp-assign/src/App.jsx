@@ -6,27 +6,31 @@ import viteLogo from '/vite.svg'
 
 
 function App() {
+  const [orders, setOrders] = useState([]); // Siirretty orders-tila App-komponenttiin
 
+  const addOrder = (product, quantity, total) => {
+    const newOrder = { product, quantity, total };
+    setOrders((prevOrders) => [...prevOrders, newOrder]);
+  };
 
   return (
     <div>
-      <Header/>
-      <SelectProduct/>
-      <OrderInfo/>
+      <Header />
+      <SelectProduct addOrder={addOrder} />
+      <OrderInfo orders={orders} />
     </div>
-  )
+  );
 }
 
-function Header(){
-  return(
+function Header() {
+  return (
     <div className="header">
       <h1>Welcome to product page!</h1>
     </div>
-  )
+  );
 }
 
-function SelectProduct(){
-  
+function SelectProduct({ addOrder }) {
   const [selectedProd, setSelectedProd] = useState('Fender Stratocaster');
   const [quantity, setQuantity] = useState(1);
 
@@ -34,23 +38,27 @@ function SelectProduct(){
     'Fender Stratocaster': 790,
     'Fender Telecaster': 750,
     'Fender Jazzmaster': 800,
-    'Fender Mustang': 650
+    'Fender Mustang': 650,
   };
 
-
   const handleQuantityChange = (increment) => {
-    setQuantity((prev) => Math.max(0, prev + increment)); //Ei voi laittaa määrää negatiiviseksi.
+    setQuantity((prev) => Math.max(0, prev + increment));
+  };
+
+  const handleAddOrder = () => {
+    if (quantity > 0) {
+      const total = quantity * productPrice[selectedProd];
+      addOrder(selectedProd, quantity, total);
+    } else {
+      alert('Please select a quantity greater than 0.');
+    }
   };
 
   return (
     <>
-      <div className="product">
+      <div>
         <h2>Select product</h2>
-      </div>
-    
-    <div id="name">
-      <p>Product:</p>
-      <select 
+        <select 
           value={selectedProd} 
           onChange={(e) => setSelectedProd(e.target.value)}>
           {Object.keys(productPrice).map((product) => (
@@ -59,56 +67,50 @@ function SelectProduct(){
             </option>
           ))}
         </select>
+      </div>
 
-    </div>
-
-    <div id="quantity">
-    <p>Quantity:</p>
+      <div>
+        <p>Quantity:</p>
         <button onClick={() => handleQuantityChange(-1)}>-</button>
         <span>{quantity}</span>
         <button onClick={() => handleQuantityChange(1)}>+</button>
-    </div>
-    
-    <div className="addorder">
-          <button>Add Order</button>
-    </div>
+      </div>
 
-  </>
-  )
+      <button onClick={handleAddOrder}>Add Order</button>
+    </>
+  );
 }
 
-function OrderInfo(){
-  return(
-    <div className="info">
+function OrderInfo({ orders }) {
+  return (
+    <div>
       <h1>Order Info</h1>
       <table>
+        <thead>
           <tr>
-            <th id="colhead1">Product</th>
-            <th id="colhead">Quanitity</th>
-            <th id="colhead">Total</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total</th>
           </tr>
-          <tr>
-            <td>testi</td>
-            <td>testi</td>
-            <td>testi</td>
-          </tr>
-          <tr>
-            <td>testi</td>
-            <td>testi</td>
-            <td>testi</td>
-          </tr>
-          <tr>
-            <td>testi</td>
-            <td>testi</td>
-            <td>testi</td>
-          </tr>
-
-
+        </thead>
+        <tbody>
+          {orders.length === 0 ? (
+            <tr>
+              <td colSpan="3">No orders added yet.</td>
+            </tr>
+          ) : (
+            orders.map((order, index) => (
+              <tr key={index}>
+                <td>{order.product}</td>
+                <td>{order.quantity}</td>
+                <td>{order.total}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-
-
-export default App
+export default App;
