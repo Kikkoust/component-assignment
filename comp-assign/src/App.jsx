@@ -8,11 +8,19 @@ function App() {
 
   return (
     <div>
-      <h1>Welcome to product page!</h1>
-      <p>Here are the oksadk</p>
-      
+      <Header/>
     </div>
   )
 }
+
+function Header(){
+  return(
+    <div>
+      <h1>Welcome to product page!</h1>
+    </div>
+  )
+}
+
+
 
 export default App
