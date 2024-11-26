@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import logo from './assets/disc-32390_640.png'
+import './App.css'
 
 
 function App() {

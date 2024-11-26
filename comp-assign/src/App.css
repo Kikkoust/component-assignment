@@ -1,0 +1,116 @@
+.header {
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: center;
+}
+  
+.header img {
+    max-width: 60px;
+    margin: 20px;
+}
+  
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+
+.product h2 {
+    display: flex;
+    color: black;
+    background-color: #9A7E6F;
+    justify-content: center;
+}
+
+.product select {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+}
+  
+.product select:hover {
+    background-color: #CBD2A4;
+    cursor: grab;
+}
+  
+
+.quantity p {
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
+  
+#buttons {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: large;
+    gap: 10px;
+}
+  
+#buttons button:hover {
+    cursor: pointer;
+}
+  
+
+.orderbutton {
+    display: flex;
+    justify-content: center;
+    background-color: #9A7E6F;
+    height: 50px;
+}
+  
+#order {
+    font-weight: bold;
+}
+  
+#order:hover {
+    background-color: #CBD2A4;
+    cursor: pointer;
+}
+  
+.orderinfo {
+    border: 3px solid #9A7E6F;
+}
+  
+.orderinfo h2 {
+    display: flex;
+    justify-content: center;
+}
+  
+.orderinfo table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+.orderinfo th, .orderinfo td {
+    padding: 12px;
+    text-align: center;
+}
+  
+.orderinfo th {
+    background-color: #9A7E6F;
+    color: white;
+}
+  
+.orderinfo tr {
+    border: 2px solid #9A7E6F;
+}
+  
+.orderinfo td {
+    text-align: center;
+}
+  
+.orderinfo td[colspan="3"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+  
+.orderinfo tr:hover {
+    background-color: #f1f1f1;
+}
+  
