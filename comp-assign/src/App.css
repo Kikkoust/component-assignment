@@ -1,8 +1,8 @@
 .header {
     display: flex;
-    color: black;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 }
   
 .header img {
@@ -11,69 +11,80 @@
 }
   
 .header h1 {
-    font-size: 24px;
     font-weight: bold;
+    color: #1A1A19;
 }
   
 
 .product h2 {
     display: flex;
-    color: black;
-    background-color: #9A7E6F;
+    color: #1A1A19;
+    background-color: #859F3D;
+    padding: 20px;
     justify-content: center;
 }
 
 .product select {
     display: flex;
+    color: #1A1A19;
     width: 100%;
     text-align: center;
-    font-weight: bold;
-    height: 30px;
+    padding: 20px;
+    font-size: 15px;
 }
   
 .product select:hover {
-    background-color: #CBD2A4;
+    background-color: #859F3D;
     cursor: grab;
+    font-weight: bolder;
 }
   
 
 .quantity p {
     display: flex;
     justify-content: center;
-    font-size: large;
+    font-size: 24px;
 }
   
 #buttons {
     display: flex;
     justify-content: center;
-    padding: 10px;
-    font-size: large;
+    margin: 30px;
+    font-size: 40px;
     gap: 10px;
 }
   
 #buttons button:hover {
     cursor: pointer;
+    background-color: #859F3D;
+}
+
+#buttons button{
+    width: 40px;
+    font-weight: bold;
+    font-size: 30px;
 }
   
 
 .orderbutton {
     display: flex;
     justify-content: center;
-    background-color: #9A7E6F;
+    background-color: #859F3D;
     height: 50px;
 }
   
 #order {
     font-weight: bold;
+    font-size: 24px;
 }
   
 #order:hover {
-    background-color: #CBD2A4;
+    background-color: #859F3D;
     cursor: pointer;
 }
   
 .orderinfo {
-    border: 3px solid #9A7E6F;
+    border: 3px solid #859F3D;
 }
   
 .orderinfo h2 {
@@ -92,12 +103,12 @@
 }
   
 .orderinfo th {
-    background-color: #9A7E6F;
+    background-color: #859F3D;
     color: white;
 }
   
 .orderinfo tr {
-    border: 2px solid #9A7E6F;
+    border: 2px solid #859F3D;
 }
   
 .orderinfo td {
